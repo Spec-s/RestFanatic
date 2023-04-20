@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FoodFanatics.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ViewModel="clr-namespace:FoodFanatics.ViewModels"
+    Title="{Binding Title}"
+    x:DataType="ViewModel:LoginPageViewModel"
+    BackgroundImageSource="restaurantbkg.jpg"
+    NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Grid BackgroundColor="Transparent" MaximumHeightRequest="220">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="220" />
+                </Grid.RowDefinitions>
+                <StackLayout BackgroundColor="Transparent">
+
+                    <Image
+                        Margin="20,20,20,20"
+                        BackgroundColor="Transparent"
+                        HeightRequest="150"
+                        Source="mauilogin.jpg" />
+
+
+                    <Label
+                        Margin="20,0,20,0"
+                        BackgroundColor="#0f3c4c"
+                        FontSize="35"
+                        HorizontalTextAlignment="Center"
+                        Text="Welcome!"
+                        TextColor="White" />
+                    <Label
+                        Margin="20,0,20,0"
+                        BackgroundColor="#1a6985"
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        Text="Hello User, please feel free to browse and add new restaurants to our database :)"
+                        TextColor="White" />
+
+
+                </StackLayout>
+
+            </Grid>
+
+
+            <Button
+                Margin="450"
+                BorderColor="ForestGreen"
+                Command="{Binding EnterBtnTappedAsyncCommand}"
+                CornerRadius="30"
+                FontSize="30"
+                HorizontalOptions="Center"
+                Text="Enter"
+                WidthRequest="170" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

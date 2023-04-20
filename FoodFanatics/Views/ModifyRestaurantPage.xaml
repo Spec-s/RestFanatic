@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FoodFanatics.Views.RegistrationPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ViewModel="clr-namespace:FoodFanatics.ViewModels"
+    Title="{Binding Title}"
+    x:DataType="ViewModel:RestaurantViewModel"
+    NavigationPage.HasNavigationBar="False">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid
+                Padding="20,20,20,0"
+                HorizontalOptions="FillAndExpand"
+                RowSpacing="20"
+                VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.Row="0"
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Adding new Restaurant"
+                    TextColor="#1C375C" />
+                <Label
+                    Grid.Row="1"
+                    Margin="0,-15,0,0"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="insert information below"
+                    TextColor="#1C375C" />
+
+                <Frame
+                    Grid.Row="2"
+                    Padding="0"
+                    BorderColor="BlueViolet"
+                    HasShadow="True"
+                    HeightRequest="54">
+                    <Entry
+                        Margin="20,20,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        Keyboard="Email"
+                        Placeholder="restaurant name"
+                        Text="{Binding Restaurantname}"
+                        VerticalOptions="Center" />
+                </Frame>
+
+                <Frame
+                    Grid.Row="3"
+                    Padding="0"
+                    BorderColor="BlueViolet"
+                    HasShadow="True"
+                    HeightRequest="54">
+                    <Entry
+                        Margin="20,0,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        Keyboard="Text"
+                        Placeholder="Details"
+                        Text="{Binding Details}"
+                        VerticalOptions="Center" />
+                </Frame>
+
+                <Frame
+                    Grid.Row="4"
+                    Padding="0"
+                    BorderColor="BlueViolet"
+                    HasShadow="True"
+                    HeightRequest="54">
+                    <Entry
+                        Margin="20,0,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        Keyboard="Text"
+                        Placeholder="Image"
+                        Text="{Binding Image}"
+                        VerticalOptions="Center" />
+                </Frame>
+
+                <Frame
+                    Grid.Row="3"
+                    Padding="0"
+                    BorderColor="BlueViolet"
+                    HasShadow="True"
+                    HeightRequest="54">
+                    <Entry
+                        Margin="20,0,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        IsPassword="True"
+                        Keyboard="Text"
+                        Placeholder="Location"
+                        Text="{Binding Location}"
+                        VerticalOptions="Center" />
+                </Frame>
+                <Button
+                    Grid.Row="5"
+                    BackgroundColor="#1C375C"
+                    Command="{Binding AddRestaurantCommand}"
+                    CornerRadius="20"
+                    FontSize="15"
+                    Text="Add Restaurant" />
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
